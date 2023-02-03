@@ -31,7 +31,7 @@ set laststatus=2
 set scrolloff=10
 set expandtab
 set wildmenu
-set shell=zsh
+
 
 " ==================== maps =============================================
 noremap ; :
