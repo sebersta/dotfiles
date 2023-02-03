@@ -58,7 +58,7 @@ endif
 
 "}}}
 
-call plug#begin()
+call plug#begin('$HOME/.config/nvim/plugged')
 
 " Git and Github functionality
 Plug 'tpope/vim-fugitive'
