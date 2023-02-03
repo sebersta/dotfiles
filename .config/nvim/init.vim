@@ -11,10 +11,8 @@ if empty(glob($HOME.'/.config/nvim/plugged/wildfire.vim/autoload/wildfire.vim'))
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-autocmd!
 " set script encoding
 scriptencoding utf-8 " stop loading config if it's on tiny or small
-if !1 | finish | endif
 set nocompatible
 set number
 syntax enable
