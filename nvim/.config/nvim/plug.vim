@@ -2,12 +2,23 @@ if has("nvim")
   let g:plug_home = stdpath('data') . '/plugged'
 endif
 
-
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" Autoinstall plugin manager
+let s:data_dir     = Stdpath('data')
+let g:plug_home    = s:data_dir . '/plugged'
+let s:autoload_dir = s:data_dir . '/site/autoload'
+let s:plugvim_file = s:autoload_dir . '/plug.vim'
+if empty(glob(s:plugvim_file))
+  call  mkdir(s:autoload_dir, 'p')
+  let s:plugurl= 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  execute 'silent !curl -fsLo '.s:plugvim_file.' '.s:plugurl
+    \ .' ||        wget -q -O '.s:plugvim_file.' '.s:plugurl
 endif
+" Install missing plugins
+let g:plugs={}
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    \| PlugUpdate --sync | source $MYVIMRC
+  \| endif
+
 
 call plug#begin()
 
