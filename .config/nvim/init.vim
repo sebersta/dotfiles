@@ -36,7 +36,6 @@ map <LEADER>sc :set spell!<CR>
 map tt :NERDTreeToggle<CR>
 
 
-colorscheme nord
 
 if has("unix")
   let s:uname = system("uname -s")
@@ -82,3 +81,4 @@ Plug 'preservim/nerdtree'
 
 call plug#end()
 
+colorscheme nord
