@@ -1,4 +1,4 @@
 cd ~
 git clone https://github.com/SebErstellen/dotfiles.git
 cd dotfiles
-cp -r .config/nvim ~/.config/nvim
+cp -R .config/nvim ~/.config/nvim
