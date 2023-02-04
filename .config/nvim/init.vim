@@ -33,11 +33,11 @@ noremap L l
 map S :w<CR>
 map Q :q<CR>
 map <LEADER>sc :set spell!<CR>
+map tt :NERDTreeToggle<CR>
 
 
-" Imports "{{{
-" ---------------------------------------------------------------------
 colorscheme nord
+
 if has("unix")
   let s:uname = system("uname -s")
   " Do Mac stuff
@@ -47,31 +47,25 @@ if has("unix")
 endif
 
 
-"}}}
-
-call plug#begin()
+call plug#begin('$HOME/.config/nvim/plugged')
 
 " Git and Github functionality
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 
-if has("nvim")
-  Plug 'vim-airline/vim-airline'
-  " Status bar
-  Plug 'hoob3rt/lualine.nvim'
 
-  Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-lua/plenary.nvim'
+" Status bar
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
-  " Fast search and fzf
-  Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
 
-  " Indentation guides
-  Plug 'lukas-reineke/indent-blankline.nvim'
+" Fast search and fzf
+Plug 'nvim-telescope/telescope.nvim'
 
-
-
-endif
+" Indentation guides
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'mhinz/vim-startify'
 
@@ -81,8 +75,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'arcticicestudio/nord-vim'
 Plug 'pearofducks/ansible-vim'
+
 Plug 'theniceboy/antovim' " gs to switch
 Plug 'junegunn/goyo.vim'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
