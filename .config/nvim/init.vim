@@ -84,4 +84,5 @@ if has("unix")
   let s:distro = system("lsb_release -is")
   if s:distro == "Ubuntu\n" || s:distro == "Debian\n"
     runtime ./debian.vim
+  endif
 endif
