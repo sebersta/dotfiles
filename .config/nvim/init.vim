@@ -8,6 +8,7 @@ endif
 scriptencoding utf-8 " stop loading config if it's on tiny or small
 set nocompatible
 set number
+set relativenumber
 syntax enable
 set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
@@ -22,6 +23,8 @@ set scrolloff=10
 set expandtab
 set wildmenu
 set cursorline
+set ignorecase
+set smartcase
 
 noremap ; :
 noremap H 7h
@@ -44,13 +47,12 @@ map <LEADER>l <c-w>l
 call plug#begin('$HOME/.config/nvim/plugged')
 
 Plug 'nvim-tree/nvim-tree.lua'
-Plug 'nvim-tree/nvim-web-devicons'
-Plug 'github/copilot.vim'
+
 
 " Git and Github functionality
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-
+Plug 'github/copilot.vim'
 
 " Status bar
 Plug 'hoob3rt/lualine.nvim'
@@ -83,6 +85,7 @@ call plug#end()
 colorscheme nord
 
 lua require'nvim-tree'.setup {}
+lua require'lualine'.setup {}
 
 if has("unix")
   let s:uname = system("uname -s")
