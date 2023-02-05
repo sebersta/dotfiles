@@ -69,8 +69,6 @@ call plug#end()
 
 colorscheme nord
 
-lua require'nvim-tree'.setup {}
-
 if has("unix")
   let s:uname = system("uname -s")
   " Do Mac stuff
