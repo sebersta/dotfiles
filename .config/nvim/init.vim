@@ -64,10 +64,6 @@ Plug 'reedes/vim-wordy'
 
 call plug#end()
 
-lua require('nvim-tree').setup {}
-lua require('lualine').setup {}
-lua require('telescope').setup {}
-
 colorscheme nord
 
 if has("unix")
