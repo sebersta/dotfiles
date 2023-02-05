@@ -80,4 +80,8 @@ if has("unix")
   if s:uname == "Darwin\n"
     runtime ./macos.vim
   endif
+
+  let s:distro = system("lsb_release -is")
+  if s:distro == "Ubuntu\n" || s:distro == "Debian\n"
+    runtime ./debian.vim
 endif
