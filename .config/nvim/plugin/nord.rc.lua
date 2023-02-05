@@ -1,6 +1,5 @@
 vim.cmd[[
 set termguicolors
-colorscheme nord
 ]]
 -- Example config in lua
 vim.api.nvim_command("hi BufferCurrent       guibg=#434c5e guifg=#eceff4 gui=bold")
