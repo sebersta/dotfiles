@@ -1,5 +1,5 @@
 cd ~
 git clone https://github.com/SebErstellen/dotfiles.git
 cd dotfiles
-rm -r ~/.config/nvim
-cp -R .config/nvim ~/.config/nvim
+rm -rf ~/.config/nvim
+cp -R .config/nvim ~/.config/
