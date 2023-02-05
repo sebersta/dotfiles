@@ -21,31 +21,31 @@ set laststatus=2
 set scrolloff=10
 set expandtab
 set wildmenu
+set cursorline
 
-
-" ==================== maps =============================================
 noremap ; :
 noremap H 7h
 noremap J 5j
 noremap K 5k
-noremap L l
+noremap L 5l
 map S :w<CR>
 map Q :q<CR>
+map tt :NvimTreeToggle<CR>
+
+let mapleader=" "
 map <LEADER>sc :set spell!<CR>
-map tt :NERDTreeToggle<CR>
-
-
-
-if has("unix")
-  let s:uname = system("uname -s")
-  " Do Mac stuff
-  if s:uname == "Darwin\n"
-    runtime ./macos.vim
-  endif
-endif
+map <LEADER>. :Goyo<CR>
+map <LEADER>h <c-w>h
+map <LEADER>j <c-w>j
+map <LEADER>k <c-w>k
+map <LEADER>l <c-w>l
 
 
 call plug#begin('$HOME/.config/nvim/plugged')
+
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'github/copilot.vim'
 
 " Git and Github functionality
 Plug 'tpope/vim-fugitive'
@@ -76,8 +76,18 @@ Plug 'pearofducks/ansible-vim'
 
 Plug 'theniceboy/antovim' " gs to switch
 Plug 'junegunn/goyo.vim'
-Plug 'preservim/nerdtree'
+Plug 'reedes/vim-wordy'
 
 call plug#end()
 
 colorscheme nord
+
+lua require'nvim-tree'.setup {}
+
+if has("unix")
+  let s:uname = system("uname -s")
+  " Do Mac stuff
+  if s:uname == "Darwin\n"
+    runtime ./macos.vim
+  endif
+endif
