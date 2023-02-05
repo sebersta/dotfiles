@@ -1,10 +1,4 @@
-if empty(glob($HOME.'/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
 
-" set script encoding
 scriptencoding utf-8 " stop loading config if it's on tiny or small
 set nocompatible
 set number
@@ -43,39 +37,30 @@ map <LEADER>j <c-w>j
 map <LEADER>k <c-w>k
 map <LEADER>l <c-w>l
 
+if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
+	echo "Downloading junegunn/vim-plug to manage plugins..."
+	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+	autocmd VimEnter * PlugInstall
+endif
 
 call plug#begin('$HOME/.config/nvim/plugged')
 
 Plug 'nvim-tree/nvim-tree.lua'
-
-
-" Git and Github functionality
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'github/copilot.vim'
-
-" Status bar
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-
-" Fast search and fzf
 Plug 'nvim-telescope/telescope.nvim'
-
-" Indentation guides
 Plug 'lukas-reineke/indent-blankline.nvim'
-
 Plug 'mhinz/vim-startify'
-
-" Git diffs
 Plug 'airblade/vim-gitgutter'
-
 Plug 'tpope/vim-surround'
 Plug 'arcticicestudio/nord-vim'
 Plug 'pearofducks/ansible-vim'
-
 Plug 'theniceboy/antovim' " gs to switch
 Plug 'junegunn/goyo.vim'
 Plug 'reedes/vim-wordy'
