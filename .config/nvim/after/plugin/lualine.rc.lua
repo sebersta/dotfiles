@@ -1,7 +1,7 @@
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 
-require('lualine').setup {
+lualine.setup {
   options = {
     theme = 'nord',
     icons_enabled = true,
