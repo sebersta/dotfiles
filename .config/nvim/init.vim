@@ -1,10 +1,7 @@
-
-scriptencoding utf-8 " stop loading config if it's on tiny or small
 set nocompatible
 set number
 set relativenumber
 syntax enable
-set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
 set title
 set autoindent
