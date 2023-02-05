@@ -85,7 +85,6 @@ call plug#end()
 colorscheme nord
 
 lua require'nvim-tree'.setup {}
-lua require'lualine'.setup {}
 
 if has("unix")
   let s:uname = system("uname -s")
