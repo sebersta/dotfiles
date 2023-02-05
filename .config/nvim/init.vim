@@ -3,7 +3,6 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
 	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
 	autocmd VimEnter * PlugInstall
-        autocmd VimEnter * source $MYVIMRC
 endif
 
 set nocompatible
@@ -38,6 +37,7 @@ noremap K 5k
 noremap L 5l
 map S :w<CR>
 map Q :q<CR>
+map R :source $MYVIMRC<CR>
 map tt :NvimTreeToggle<CR>
 map <C-p> :Telescope find_files<CR>
 
