@@ -1,4 +1,9 @@
 set nocompatible
+filetype on
+filetype plugin on
+filetype indent on
+filetype plugin indent on
+set encoding=utf-8
 set number
 set relativenumber
 syntax enable
@@ -16,15 +21,17 @@ set wildmenu
 set cursorline
 set ignorecase
 set smartcase
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 noremap ; :
-noremap H 7h
+noremap H 5h
 noremap J 5j
 noremap K 5k
 noremap L 5l
 map S :w<CR>
 map Q :q<CR>
 map tt :NvimTreeToggle<CR>
+map <C-p> :Telescope find_files<CR>
 
 let mapleader=" "
 map <LEADER>sc :set spell!<CR>
