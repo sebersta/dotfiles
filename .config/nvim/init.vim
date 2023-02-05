@@ -1,3 +1,11 @@
+if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
+	echo "Downloading junegunn/vim-plug to manage plugins..."
+	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+	autocmd VimEnter * PlugInstall
+        autocmd VimEnter * source $MYVIMRC
+endif
+
 set nocompatible
 filetype on
 filetype plugin on
@@ -40,13 +48,6 @@ map <LEADER>h <c-w>h
 map <LEADER>j <c-w>j
 map <LEADER>k <c-w>k
 map <LEADER>l <c-w>l
-
-if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
-	echo "Downloading junegunn/vim-plug to manage plugins..."
-	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
-	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
-	autocmd VimEnter * PlugInstall
-endif
 
 call plug#begin('$HOME/.config/nvim/plugged')
 
