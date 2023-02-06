@@ -1,5 +1,4 @@
 vim.cmd[[
-colorscheme nord
 set termguicolors
 ]]
 -- Example config in lua
