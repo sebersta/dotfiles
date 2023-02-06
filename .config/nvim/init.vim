@@ -50,6 +50,7 @@ map <LEADER>l <c-w>l
 
 call plug#begin('$HOME/.config/nvim/plugged')
 
+Plug 'tpope/vim-commentary'
 Plug 'rcarriga/nvim-notify'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'tpope/vim-fugitive'
