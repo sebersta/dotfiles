@@ -73,8 +73,6 @@ Plug 'reedes/vim-wordy'
 
 call plug#end()
 
-colorscheme nord
-
 if has("unix")
   let s:uname = system("uname -s")
   " Do Mac stuff
