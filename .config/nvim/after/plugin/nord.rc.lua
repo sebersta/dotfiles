@@ -11,9 +11,3 @@ vim.api.nvim_command("hi BufferInactive      guibg=none guifg=#4c566a")
 vim.api.nvim_command("hi BufferInactiveSign  guibg=none guifg=#4c566a")
 vim.api.nvim_command("hi BufferInactiveMod   guibg=none guifg=#ebcb8b")
 vim.api.nvim_command("hi BufferTabpageFill   guibg=none guifg=#4c566a")
--- Load the colorscheme
-require('lualine').setup {
-  options = {
-    theme = 'nord'
-  }
-}
