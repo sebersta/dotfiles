@@ -1,4 +1,4 @@
 ```
 cd ~
-git clone https://github.com/SebErstellen/.config.git
+git clone https://github.com/SebErstellen/dotfiles.git
 ```
