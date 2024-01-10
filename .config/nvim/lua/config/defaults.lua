@@ -32,3 +32,21 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 vim.cmd[[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]]
+
+function run()
+    vim.cmd("w")
+
+    local filetype = vim.bo.filetype -- get current filetype
+
+    if filetype == 'c' then
+        vim.cmd("belowright split | resize -5 | terminal gcc % -o %< && time ./%<")
+    elseif filetype == 'sh' then
+        vim.cmd("terminal bash %")
+    elseif filetype == 'python' then
+        vim.cmd("belowright split | terminal python3 %")
+    elseif filetype == 'markdown' then
+        -- Requires InstantMarkdownPreview plugin or similar
+        vim.cmd("MarkdownPreview")
+    end
+end
+

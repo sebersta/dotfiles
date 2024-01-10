@@ -24,6 +24,13 @@ require("lazy").setup({
   'ryanoasis/vim-devicons',
   'nvim-telescope/telescope.nvim',
   'nvim-lua/plenary.nvim',
+{
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+},
+  'dccsillag/magma-nvim',
 	})
   
 vim.cmd('colorscheme nord')

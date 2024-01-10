@@ -22,7 +22,8 @@ local mappings = {
     { 'n', 'sl', ':set splitright<CR>:vsplit | Startify<CR>' },
     { 'n', 'sh', ':set nosplitright<CR>:vsplit | Startify<CR>' },
     { 'n', 'sj', ':set nosplitbelow<CR>:split | Startify<CR>' },
-    { 'n', 'sk', ':set splitbelow<CR>:split | Startify<CR>' }
+    { 'n', 'sk', ':set splitbelow<CR>:split | Startify<CR>' },
+    { 'n', 'r',  ':lua run()<CR>'}
 }
 
 for _, map in pairs(mappings) do
