@@ -12,7 +12,7 @@ export EDITOR=nvim
 export BAT_THEME="Nord"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-set -gx PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin /opt/local/bin ~/.local/bin
+set -gx PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin /opt/local/bin ~/.local/bin 
 
 abbr mkdir "mkdir -p"
 
@@ -22,6 +22,7 @@ alias ra="joshuto"
 alias la="ls -lha"
 alias df="df -h"
 alias du="du -ch"
+alias iv="nvim $(fzf -m --preview="bat --color=always {}")"
 
 # Start tmux if it's not already running
 # if status is-interactive
@@ -30,4 +31,3 @@ alias du="du -ch"
 # end
 
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
-
