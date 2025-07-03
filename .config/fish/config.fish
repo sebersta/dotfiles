@@ -24,10 +24,10 @@ alias df="df -h"
 alias du="du -ch"
 
 # Start tmux if it's not already running
-if status is-interactive
-and not set -q TMUX
-    exec tmux
-end
+# if status is-interactive
+# and not set -q TMUX
+#     exec tmux
+# end
 
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 

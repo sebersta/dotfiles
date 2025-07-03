@@ -8,4 +8,5 @@ stow .
 mkdir -p ~/.local/bin
 bash <(curl -s https://raw.githubusercontent.com/kamiyaa/joshuto/master/utils/install.sh)
 
-chsh -s /usr/bin/fish
+which fish | sudo tee -a /etc/shells
+chsh -s $(which fish)
