@@ -8,9 +8,9 @@
 
 function fish_prompt
     if test $status != 0
-        echo (set_color red)(prompt_hostname)(set_color blue) " ❯ ~ "(set_color normal)
+        echo (set_color red)(prompt_hostname)(set_color blue) "❯ ~ "(set_color normal)
     else
-        echo (set_color green)(prompt_hostname)(set_color blue) " ❯ ~ "(set_color normal)
+        echo (set_color green)(prompt_hostname)(set_color blue) "❯ ~ "(set_color normal)
     end
 end
 
