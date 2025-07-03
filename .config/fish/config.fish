@@ -12,7 +12,7 @@ export EDITOR=nvim
 export BAT_THEME="Nord"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-set -gx PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin /opt/local/bin
+set -gx PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin /opt/local/bin ~/.local/bin
 
 abbr mkdir "mkdir -p"
 
