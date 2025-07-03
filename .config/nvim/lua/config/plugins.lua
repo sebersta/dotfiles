@@ -32,12 +32,12 @@ require("lazy").setup({
   -- 'preservim/nerdtree', --tt
   'nvim-telescope/telescope.nvim',
   'nvim-lua/plenary.nvim',
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-  },
+  -- {
+  --   "iamcco/markdown-preview.nvim",
+  --   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+  --   ft = { "markdown" },
+  --   build = function() vim.fn["mkdp#util#install"]() end,
+  -- },
   -- {
   --   "kiyoon/jupynium.nvim",
   --   build = "pip3 install --user .",
