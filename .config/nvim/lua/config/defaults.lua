@@ -30,6 +30,9 @@ vim.o.wildmenu = true
 vim.wo.cursorline = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
+vim.o.foldmethod = 'indent'
+
+vim.loader.enable(true) 
 
 vim.cmd[[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]]
 
@@ -47,6 +50,28 @@ function run()
     elseif filetype == 'markdown' then
         -- Requires InstantMarkdownPreview plugin or similar
         vim.cmd("MarkdownPreview")
+    elseif filetype == 'js' or filetype == 'javascript' then
+        vim.cmd("belowright split | terminal node %")
+    elseif filetype == 'tex' then
+        -- Requires vimtex plugin
+        vim.cmd("VimtexView")
     end
 end
 
+vim.g.vimtex_quickfix_ignore_filters = {
+  'Fandol', 
+}
+
+function TexFocusVim()
+  -- Replace `TERMINAL` with the name of your terminal application
+  -- Example: os.execute("open -a iTerm")
+  -- Example: os.execute("open -a Alacritty")
+  os.execute("open -a TERMINAL")
+end
+
+vim.cmd([[
+augroup vimtex_event_focus
+  au!
+  au User VimtexEventViewReverse call s:TexFocusVim()
+augroup END
+]])
