@@ -22,7 +22,7 @@ alias ra="joshuto"
 alias la="ls -lha"
 alias df="df -h"
 alias du="du -ch"
-alias inv="nvim $(fzf -m --preview="bat --color=always {}")"
+alias fzvim="nvim $(fzf -m --preview="bat --color=always {}")"
 
 # Start tmux if it's not already running
 # if status is-interactive
